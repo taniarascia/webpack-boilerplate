@@ -1,4 +1,4 @@
-const path = require('path')
+const paths = require('./paths')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -12,7 +12,7 @@ module.exports = {
    * @url https://webpack.js.org/configuration/entry-context/
    */
   entry: {
-    main: path.resolve(__dirname, '../src/index.js'),
+    main: paths.src + '/index.js',
   },
 
   /**
@@ -23,8 +23,8 @@ module.exports = {
    * @url https://webpack.js.org/configuration/output/
    */
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[hash].bundle.js',
+    path: paths.build,
+    filename: '[name].bundle.js',
   },
 
   /**
@@ -47,9 +47,9 @@ module.exports = {
     /**
      * CopyWebpackPlugin
      *
-     * Copies files from specified folder to output folder.
+     * Copies files from target to destination folder.
      */
-    new CopyWebpackPlugin([{ from: path.resolve(__dirname, '../public'), to: 'assets' }]),
+    new CopyWebpackPlugin([{ from: paths.publicPath, to: 'assets', ignore: ['*.DS_Store'] }]),
 
     /**
      * HtmlWebpackPlugin
@@ -60,8 +60,8 @@ module.exports = {
      */
     new HtmlWebpackPlugin({
       title: 'Webpack Boilerplate',
-      favicon: 'public/images/favicon.png',
-      template: path.resolve(__dirname, '../src/template.html'), // template file
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/template.html', // template file
       filename: 'index.html', // output file
     }),
   ],
@@ -83,22 +83,18 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties'],
-          },
-        },
+        use: ['babel-loader', 'eslint-loader'],
       },
 
       /**
        * Styles
+       *
+       * Inject CSS into the head with source maps.
        */
       {
         test: /\.(scss|css)$/,
         use: [
-          'style-loader', // injects CSS directly into the head
+          'style-loader',
           { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
           { loader: 'postcss-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
@@ -107,6 +103,8 @@ module.exports = {
 
       /**
        * Images
+       *
+       * Copy image files to build folder.
        */
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i,
@@ -119,13 +117,15 @@ module.exports = {
 
       /**
        * Fonts
+       *
+       * Inline font files.
        */
       {
         test: /\.(woff(2)?|eot|ttf|otf|)$/,
         loader: 'url-loader',
         options: {
+          limit: 8192,
           name: '[path][name].[ext]',
-          limit: 10000,
           context: 'src', // prevent display of src/ in filename
         },
       },

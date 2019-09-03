@@ -7,10 +7,10 @@ import './styles/index.scss'
 const logo = document.createElement('img')
 logo.src = WebpackLogo
 
-// Create paragraph node
-const greeting = document.createElement('p')
+// Create heading node
+const greeting = document.createElement('h1')
 greeting.textContent = HelloWorld()
 
-// Append SVG and paragraph nodes to the DOM
-const app = document.querySelector('#app')
+// Append SVG and heading nodes to the DOM
+const app = document.querySelector('#root')
 app.append(logo, greeting)

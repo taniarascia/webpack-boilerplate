@@ -1,4 +1,4 @@
-const path = require('path')
+const paths = require('./paths')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
@@ -30,7 +30,7 @@ module.exports = merge(common, {
    * @url https://webpack.js.org/configuration/dev-server/
    */
   devServer: {
-    contentBase: path.resolve(__dirname, '../dist'),
+    contentBase: paths.build,
     open: true,
     compress: true,
     hot: true,
