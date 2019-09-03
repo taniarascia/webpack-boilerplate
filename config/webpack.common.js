@@ -8,8 +8,6 @@ module.exports = {
    * Entry
    *
    * The first place Webpack looks to start building the bundle.
-   *
-   * @url https://webpack.js.org/configuration/entry-context/
    */
   entry: {
     main: paths.src + '/index.js',
@@ -19,8 +17,6 @@ module.exports = {
    * Output
    *
    * Where Webpack outputs the assets and bundles.
-   *
-   * @url https://webpack.js.org/configuration/output/
    */
   output: {
     path: paths.build,
@@ -31,16 +27,12 @@ module.exports = {
    * Plugins
    *
    * Customize the Webpack build process.
-   *
-   * @url https://webpack.js.org/configuration/plugins/
    */
   plugins: [
     /**
      * CleanWebpackPlugin
      *
      * Removes/cleans build folders and unused assets when rebuilding.
-     *
-     * @url https://github.com/johnagan/clean-webpack-plugin
      */
     new CleanWebpackPlugin(),
 
@@ -49,14 +41,18 @@ module.exports = {
      *
      * Copies files from target to destination folder.
      */
-    new CopyWebpackPlugin([{ from: paths.publicPath, to: 'assets', ignore: ['*.DS_Store'] }]),
+    new CopyWebpackPlugin([
+      {
+        from: paths.static,
+        to: 'assets',
+        ignore: ['*.DS_Store'],
+      },
+    ]),
 
     /**
      * HtmlWebpackPlugin
      *
      * Generates an HTML file from a template.
-     *
-     * @url https://github.com/jantimon/html-webpack-plugin
      */
     new HtmlWebpackPlugin({
       title: 'Webpack Boilerplate',
@@ -70,8 +66,6 @@ module.exports = {
    * Module
    *
    * Determine how modules within the project are treated.
-   *
-   * @url https://webpack.js.org/configuration/module/
    */
   module: {
     rules: [

@@ -8,8 +8,6 @@ module.exports = merge(common, {
    * Mode
    *
    * Set the mode to development or production.
-   *
-   * @url https://webpack.js.org/configuration/mode/
    */
   mode: 'development',
 
@@ -17,17 +15,13 @@ module.exports = merge(common, {
    * Devtool
    *
    * Control how source maps are generated.
-   *
-   * @url https://webpack.js.org/configuration/devtool/
    */
   devtool: 'inline-source-map',
 
   /**
    * DevServer
    *
-   * A server for quick development.
-   *
-   * @url https://webpack.js.org/configuration/dev-server/
+   * Spin up a server for quick development.
    */
   devServer: {
     contentBase: paths.build,
