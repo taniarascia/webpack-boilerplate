@@ -9,6 +9,7 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: paths.build,
+    publicPath: '/',
     filename: '[name].[contenthash].bundle.js',
   },
   devtool: 'source-map',
@@ -33,9 +34,6 @@ module.exports = merge(common, {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../../',
-            },
           },
           'css-loader',
           'postcss-loader',

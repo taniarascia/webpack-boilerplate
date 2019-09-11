@@ -1,4 +1,4 @@
-# Webpack Boilerplate
+# 📦 Webpack Boilerplate
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) ![David](https://img.shields.io/david/dev/taniarascia/webpack-boilerplate)
 
@@ -41,6 +41,7 @@ npm run build
 - [`webpack-cli`](https://github.com/webpack/webpack-cli) - Command line interface for Webpack.
 - [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) - Development server for Webpack.
 - [`webpack-merge`](https://github.com/survivejs/webpack-merge) - Simplify development/production configuration
+- [`cross-env`](https://github.com/kentcdodds/cross-env) - Cross platform configuration.
 
 ### Babel
 
