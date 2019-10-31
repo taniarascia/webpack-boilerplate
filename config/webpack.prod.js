@@ -49,5 +49,20 @@ module.exports = merge(common, {
    */
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-  },
+    // Once your build outputs multiple chunks, this option will ensure they share the webpack runtime
+    // instead of having their own. This also helps with long-term caching, since the chunks will only
+    // change when actual code changes, not the webpack runtime.
+    runtimeChunk: 'single',
+    // This breaks apart commonly shared deps (react, semantic ui, etc) into one shared bundle. React, etc won't change
+    // as often as the app code, so this chunk can be cached separately from app code.
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/](react|react-dom|lodash)[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  }
 })
