@@ -1,3 +1,3 @@
-export default function HelloWorld() {
+export const HelloWorld = () => {
   return 'Hello, World!'
 }
