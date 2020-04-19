@@ -29,7 +29,7 @@ npm run build
 
 You can view the deploy by creating a server in `dist`. 
 
-In case you don't have have http-server
+In case you don't have [http-server](https://www.npmjs.com/package/http-server) installed.
 
 ```bash 
 cd dist && npm -i http-server -g && http-server
