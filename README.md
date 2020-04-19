@@ -27,7 +27,15 @@ You can view the development server at `localhost:3000`.
 npm run build
 ```
 
-You can view the deploy by creating a server in `dist`.
+You can view the deploy by creating a server in `dist`. 
+
+In case you don't have have http-server
+
+```bash 
+cd dist && npm -i http-server -g && http-server
+
+```
+else
 
 ```bash
 cd dist && http-server
