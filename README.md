@@ -27,7 +27,13 @@ You can view the development server at `localhost:3000`.
 npm run build
 ```
 
-You can view the deploy by creating a server in `dist`.
+> Note: Install [http-server](https://www.npmjs.com/package/http-server) globally to deploy a simple server.
+
+```bash 
+npm -i http-server -g
+```
+
+You can view the deploy by creating a server in `dist`. 
 
 ```bash
 cd dist && http-server
