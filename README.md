@@ -19,7 +19,7 @@ npm i
 npm start
 ```
 
-You can view the development server at `localhost:3000`.
+You can view the development server at `localhost:8080`.
 
 ### Production build
 
