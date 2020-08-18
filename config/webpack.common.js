@@ -40,13 +40,6 @@ module.exports = {
      *
      * Copies files from target to destination folder.
      */
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: paths.static,
-    //     to: 'assets',
-    //     ignore: ['*.DS_Store'],
-    //   },
-    // ]),
     new CopyWebpackPlugin({
       patterns: [
         {
