@@ -2,6 +2,7 @@ const paths = require('./paths')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ResponsiveLoaderPlugin = require('responsive-loader/sharp')
 
 module.exports = {
   /**
@@ -97,16 +98,24 @@ module.exports = {
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
-
+      {
+        test: /\.(?:ico|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          context: 'src', // prevent display of src/ in filename
+        },
+      },
       /**
        * Images
        *
        * Copy image files to build folder.
        */
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i,
-        loader: 'file-loader',
+        test: /\.(?:gif|png|jpg|jpeg|webp)$/i,
+        loader: 'responsive-loader',
         options: {
+          adapter: ResponsiveLoaderPlugin,
           name: '[path][name].[ext]',
           context: 'src', // prevent display of src/ in filename
         },
