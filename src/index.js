@@ -1,6 +1,7 @@
 // Test import of a JavaScript function, an SVG, and Sass
 import { HelloWorld } from './js/HelloWorld'
 import WebpackLogo from './images/webpack-logo.svg'
+
 import './styles/index.scss'
 
 // Create SVG logo node
