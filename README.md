@@ -2,12 +2,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) ![David](https://img.shields.io/david/dev/taniarascia/webpack-boilerplate)
 
-Minimal Webpack 4 boilerplate with Babel, Sass, ESLint, Hot Module Replacement, and development/production optimization.
+Sensible Webpack 4 boilerplate using Babel and PostCSS with HMR development server and an optimized production build.
 
 ## Installation
 
 ```
 git clone git@github.com:taniarascia/webpack-boilerplate
+cd webpack-boilerplate
 npm i
 ```
 
@@ -29,11 +30,11 @@ npm run build
 
 > Note: Install [http-server](https://www.npmjs.com/package/http-server) globally to deploy a simple server.
 
-```bash 
+```bash
 npm i -g http-server
 ```
 
-You can view the deploy by creating a server in `dist`. 
+You can view the deploy by creating a server in `dist`.
 
 ```bash
 cd dist && http-server
@@ -45,7 +46,6 @@ cd dist && http-server
 - [Babel](https://babeljs.io/)
 - [Sass](https://sass-lang.com/)
 - [PostCSS](https://postcss.org/)
-- [ESLint](https://eslint.org/)
 
 ## Dependencies
 
@@ -60,10 +60,8 @@ cd dist && http-server
 ### Babel
 
 - [`@babel/core`](https://www.npmjs.com/package/@babel/core) - Transpile ES6+ to backwards compatible JavaScript.
-- [`@babel/plugin-proposal-class-properties`](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) - Use properties directly on a class.
+- [`@babel/plugin-proposal-class-properties`](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) - Use properties directly on a class. (example Babel config)
 - [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - Smart defaults for Babel.
-- [`babel-eslint`](https://github.com/babel/babel-eslint) - Lint Babel code.
-  - [`eslint`](https://github.com/eslint/eslint) - ESLint.
 
 ### Loaders
 
@@ -75,8 +73,7 @@ cd dist && http-server
   - [`postcss-preset-env`](https://www.npmjs.com/package/postcss-preset-env) - Sensible defaults for PostCSS.
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolves CSS imports into JS.
 - [`style-loader`](https://webpack.js.org/loaders/style-loader/) - Inject CSS into the DOM.
-- [`eslint-loader`](https://webpack.js.org/loaders/eslint-loader/) - Use ESLint with Webpack.
-- [`file-loader`](https://webpack.js.org/loaders/file-loader/) - Copy files to build folder.
+- [`file-loader`](https://webpack.js.org/loaders/file-loader/) - Allow import of files and emit file to build folder.
 - [`url-loader`](https://webpack.js.org/loaders/url-loader/) - Encode and inline files. Falls back to file-loader.
 
 ### Plugins

@@ -1,9 +1,9 @@
 {
   "name": "webpack-boilerplate",
   "version": "1.0.0",
-  "description": "Webpack 4 Boilerplate",
+  "description": "Sensible Webpack 4 boilerplate using Babel and PostCSS with HMR development server and optimized production build.",
   "main": "index.js",
-  "author": "Tania Rascia <tania@taniarascia.com>",
+  "author": "Tania Rascia",
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
@@ -20,15 +20,12 @@
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.9.0",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.3",
     "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
     "cssnano": "^4.1.10",
-    "eslint": "^7.8.1",
-    "eslint-loader": "^4.0.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.4",
     "mini-css-extract-plugin": "^0.11.1",
@@ -44,5 +41,9 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:taniarascia/webpack-boilerplate"
   }
 }
