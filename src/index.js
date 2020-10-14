@@ -1,16 +1,18 @@
-// Test import of a JavaScript function, an SVG, and Sass
-import {HelloWorld} from './js/HelloWorld'
-import WebpackLogo from './images/webpack-logo.svg'
+// Test import of a JavaScript function
+import {example} from './js/example'
+
+// Test import of an asset
+import webpackLogo from './images/webpack-logo.svg'
+
+// Test import of styles
 import './styles/index.scss'
 
-// Create SVG logo node
+// Appending to the DOM
 const logo = document.createElement('img')
-logo.src = WebpackLogo
+logo.src = webpackLogo
 
-// Create heading node
 const heading = document.createElement('h1')
-heading.textContent = HelloWorld()
+heading.textContent = example()
 
-// Append SVG and heading nodes to the DOM
 const app = document.querySelector('#root')
 app.append(logo, heading)

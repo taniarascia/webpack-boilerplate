@@ -1,28 +1,17 @@
 const paths = require('./paths')
+
 const webpack = require('webpack')
-const {merge} = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
-  /**
-   * Mode
-   *
-   * Set the mode to development or production.
-   */
+  // Set the mode to development or production
   mode: 'development',
 
-  /**
-   * Devtool
-   *
-   * Control how source maps are generated.
-   */
+  // Control how source maps are generated
   devtool: 'inline-source-map',
 
-  /**
-   * DevServer
-   *
-   * Spin up a server for quick development.
-   */
+  // Spin up a server for quick development
   devServer: {
     historyApiFallback: true,
     contentBase: paths.build,
@@ -33,11 +22,7 @@ module.exports = merge(common, {
   },
 
   plugins: [
-    /**
-     * HotModuleReplacementPlugin
-     *
-     * Only update what has changed.
-     */
+    // Only update what has changed on hot reload
     new webpack.HotModuleReplacementPlugin(),
   ],
 })

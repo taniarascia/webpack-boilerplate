@@ -1,9 +1,10 @@
 const paths = require('./paths')
-const {merge} = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const TerserJSPlugin = require('terser-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -11,17 +12,11 @@ module.exports = merge(common, {
   output: {
     path: paths.build,
     publicPath: '/',
-    filename: '[name].[contenthash].bundle.js',
+    filename: 'js/[name].[contenthash].bundle.js',
   },
   plugins: [
-    /**
-     * MiniCssExtractPlugin
-     *
-     * Extracts CSS into separate files.
-     *
-     * Note: style-loader is for development, MiniCssExtractPlugin is for production.
-     * They cannot be used together in the same config.
-     */
+    // Extracts CSS into separate files
+    // Note: style-loader is for development, MiniCssExtractPlugin is for production
     new MiniCssExtractPlugin({
       filename: 'styles/[name].[contenthash].css',
       chunkFilename: '[id].css',
@@ -36,7 +31,8 @@ module.exports = merge(common, {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
+              importLoaders: 2,
+              sourceMap: false,
             },
           },
           'postcss-loader',
@@ -45,28 +41,14 @@ module.exports = merge(common, {
       },
     ],
   },
-
-  /**
-   * Optimization
-   *
-   * Production minimizing of JavaSvript and CSS assets.
-   */
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimize: true,
+    minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
     // Once your build outputs multiple chunks, this option will ensure they share the webpack runtime
     // instead of having their own. This also helps with long-term caching, since the chunks will only
     // change when actual code changes, not the webpack runtime.
-    runtimeChunk: 'single',
-    // This breaks apart commonly shared deps (react, semantic ui, etc) into one shared bundle. React, etc
-    // won't change as often as the app code, so this chunk can be cached separately from app code.
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/](react|react-dom|lodash)[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
+    runtimeChunk: {
+      name: 'runtime',
     },
   },
   performance: {
