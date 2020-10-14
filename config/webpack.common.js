@@ -1,11 +1,11 @@
 const paths = require('./paths')
 
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  // Where weback looks to start building the bundle
+  // Where webpack looks to start building the bundle
   entry: [paths.src + '/index.js'],
 
   // Where webpack outputs the assets and bundles
