@@ -3,6 +3,7 @@ const paths = require('./paths')
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
+const hotReload = require('./hotReload')
 
 module.exports = merge(common, {
   // Set the mode to development or production
@@ -19,7 +20,7 @@ module.exports = merge(common, {
     compress: true,
     port: 8080,
     before(app, server) {
-      paths.htmlHotPlugin.setDevServer(server)
+      hotReload.html.setDevServer(server)
     },
   },
 
