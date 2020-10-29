@@ -17,8 +17,10 @@ module.exports = merge(common, {
     contentBase: paths.build,
     open: true,
     compress: true,
-    hot: true,
     port: 8080,
+    before(app, server) {
+      paths.htmlHotPlugin.setDevServer(server)
+    },
   },
 
   plugins: [
