@@ -6,9 +6,9 @@ Sensible webpack 5 boilerplate using Babel, PostCSS and Sass with a hot dev serv
 
 ## Installation
 
-```
-git clone git@github.com:taniarascia/webpack-boilerplate
-cd webpack-boilerplate
+Clone this repo and npm install.
+
+```bash
 npm i
 ```
 
