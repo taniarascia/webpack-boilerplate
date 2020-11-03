@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js"
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
+    "lint": "eslint . src config"
   },
   "keywords": [
     "webpack",
@@ -24,6 +25,11 @@
     "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
     "css-minimizer-webpack-plugin": "^1.1.5",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-hot-plugin": "^1.2.2",
     "html-webpack-plugin": "^5.0.0-alpha.7",
     "mini-css-extract-plugin": "^1.0.0",

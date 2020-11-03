@@ -81,6 +81,14 @@ cd dist && http-server
 - [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) - Extract CSS into separate files
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets
 
+### Linters
+
+- [`eslint`](https://github.com/eslint/eslint) - Enforce styleguide across application
+- [`eslint-config-airbnb-base`](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) - Base styleguide to enforce rules
+- [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) - Implment prettier rules
+- [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import) - Implment import rules
+- [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier) - Dependency for prettier usage with ESLint
+
 ## Author
 
 - [Tania Rascia](https://www.taniarascia.com)
