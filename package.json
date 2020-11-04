@@ -8,7 +8,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
-    "lint": "eslint . src config"
+    "lint": "eslint . src config || true"
   },
   "keywords": [
     "webpack",
@@ -28,8 +28,10 @@
     "eslint": "^7.12.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.15.0",
+    "eslint-import-resolver-webpack": "^0.13.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
+    "eslint-webpack-plugin": "^2.1.0",
     "html-webpack-hot-plugin": "^1.2.2",
     "html-webpack-plugin": "^5.0.0-alpha.7",
     "mini-css-extract-plugin": "^1.0.0",

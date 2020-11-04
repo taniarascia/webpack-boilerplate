@@ -1,5 +1,5 @@
 // Test import of a JavaScript function
-import {example} from './js/example'
+import example from './js/example'
 
 // Test import of an asset
 import webpackLogo from './images/webpack-logo.svg'

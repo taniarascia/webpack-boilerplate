@@ -1,12 +1,14 @@
 {
+  "ignorePatterns": ["dist", "node_modules"],
   "rules": {
-    "max-len": [
-      "error",
-      {
-        "ignoreUrls": true,
-        "code": 80
-      }
-    ],
+    // "max-len": [
+    //   "error",
+    //   {
+    //     "ignoreUrls": true,
+    //     "code": 80
+    //   }
+    // ],
+    "prefer-template": "off",
     "indent": ["error", 2],
     "object-curly-spacing": ["error", "always"],
     "no-multiple-empty-lines": [
@@ -34,7 +36,8 @@
     "no-template-curly-in-string": "error",
     "no-self-compare": "error",
     "func-names": ["error", "as-needed"],
-    "semi": [2, "never"]
+    "semi": [2, "never"],
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": false }]
   },
   "env": {
     "browser": true,
@@ -49,5 +52,6 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "settings": { "import/resolver": "webpack" }
 }
