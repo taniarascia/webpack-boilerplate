@@ -29,6 +29,7 @@ module.exports = {
           globOptions: {
             ignore: ['*.DS_Store'],
           },
+          noErrorOnMissing: true,
         },
       ],
     }),
