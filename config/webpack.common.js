@@ -50,17 +50,6 @@ module.exports = {
       // JavaScript: Use Babel to transpile JavaScript files
       {test: /\.js$/, exclude: /node_modules/, use: ['babel-loader']},
 
-      // Styles: Inject CSS into the head with source maps
-      {
-        test: /\.(scss|css)$/,
-        use: [
-          'style-loader',
-          {loader: 'css-loader', options: {sourceMap: true, importLoaders: 1}},
-          {loader: 'postcss-loader', options: {sourceMap: true}},
-          {loader: 'sass-loader', options: {sourceMap: true}},
-        ],
-      },
-
       // Images: Copy image files to build folder
       {test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource'},
 

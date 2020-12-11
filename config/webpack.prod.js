@@ -13,14 +13,6 @@ module.exports = merge(common, {
     publicPath: '/',
     filename: 'js/[name].[contenthash].bundle.js',
   },
-  plugins: [
-    // Extracts CSS into separate files
-    // Note: style-loader is for development, MiniCssExtractPlugin is for production
-    new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
   module: {
     rules: [
       {
@@ -32,6 +24,7 @@ module.exports = merge(common, {
             options: {
               importLoaders: 2,
               sourceMap: false,
+              modules: true,
             },
           },
           'postcss-loader',
@@ -40,6 +33,14 @@ module.exports = merge(common, {
       },
     ],
   },
+  plugins: [
+    // Extracts CSS into separate files
+    // Note: style-loader is for development, MiniCssExtractPlugin is for production
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].[contenthash].css',
+      chunkFilename: '[id].css',
+    }),
+  ],
   optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin(), "..."],
