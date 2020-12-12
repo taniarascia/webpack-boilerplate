@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
-const hotReload = require('./hotReload')
 const paths = require('./paths')
 
 module.exports = merge(common, {
@@ -17,10 +16,8 @@ module.exports = merge(common, {
     contentBase: paths.build,
     open: true,
     compress: true,
+    hot: true,
     port: 8080,
-    before(app, server) {
-      hotReload.html.setDevServer(server)
-    },
   },
 
   module: {
