@@ -1,13 +1,13 @@
 {
   "ignorePatterns": ["dist", "node_modules"],
   "rules": {
-    // "max-len": [
-    //   "error",
-    //   {
-    //     "ignoreUrls": true,
-    //     "code": 80
-    //   }
-    // ],
+    "max-len": [
+      "error",
+      {
+        "ignoreUrls": true,
+        "code": 80
+      }
+    ],
     "prefer-template": "off",
     "indent": ["error", 2],
     "object-curly-spacing": ["error", "always"],
@@ -37,7 +37,8 @@
     "no-self-compare": "error",
     "func-names": ["error", "as-needed"],
     "semi": [2, "never"],
-    "import/no-extraneous-dependencies": ["off", { "devDependencies": false }]
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": false }],
+    "import/prefer-default-export": "off"
   },
   "env": {
     "browser": true,
