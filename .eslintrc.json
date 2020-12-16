@@ -37,8 +37,7 @@
     "no-self-compare": "error",
     "func-names": ["error", "as-needed"],
     "semi": [2, "never"],
-    "import/no-extraneous-dependencies": ["off", { "devDependencies": false }],
-    "import/prefer-default-export": "off"
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": false }]
   },
   "env": {
     "browser": true,
