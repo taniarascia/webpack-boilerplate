@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PrettierPlugin = require('prettier-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+
 const paths = require('./paths')
 
 module.exports = {

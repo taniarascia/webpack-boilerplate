@@ -1,4 +1,4 @@
-// Test import of a JavaScript function
+// Test import of a JavaScript module
 import { example } from '@/js/example'
 
 // Test import of an asset
