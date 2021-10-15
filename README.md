@@ -88,7 +88,6 @@ cd dist && http-server
 - [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) - Implment prettier rules
 - [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import) - Implment import rules
 - [`eslint-import-resolver-webpack`](https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers/webpack) - Throw exceptions for import/export in webpack
-- [`eslint-webpack-plugin`](https://github.com/webpack-contrib/eslint-webpack-plugin) - ESLint configuration for webpack
 - [`prettier`](https://github.com/prettier/prettier) - Dependency for `prettier-webpack-plugin` plugin
 
 ## Author
