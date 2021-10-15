@@ -3,26 +3,23 @@ html {
   font-family: $font-family;
   background: $background-color;
   color: $font-color;
-  max-width: $page-width;
   line-height: 1.4;
 }
 
 body {
-  margin: 0;
-  width: 100vw;
-}
-
-#root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  align-self: center;
-  height: 100vh;
+  margin: auto;
+  text-align: center;
+  max-width: $page-width;
 }
 
 h1 {
-  margin: auto;
-  text-align: center;
-  max-width: 90vw;
+  margin: 0 0 2rem;
+}
+
+.image {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background-image: url('~assets/example.png');
+  background-size: cover;
 }

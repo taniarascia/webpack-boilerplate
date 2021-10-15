@@ -63,6 +63,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
       '@': paths.src,
+      assets: paths.public,
     },
   },
 }
