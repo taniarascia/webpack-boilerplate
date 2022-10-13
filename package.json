@@ -47,4 +47,8 @@
     "type": "git",
     "url": "git@github.com:taniarascia/webpack-boilerplate"
   }
+  "dependencies": {
+    "regenerator-runtime": "^0.13.9"
+  }
+  
 }
