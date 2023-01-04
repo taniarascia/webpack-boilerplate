@@ -1,0 +1,35 @@
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull
+# request events but only for the master branch.
+#
+# Moreover, a periodic rebuild is scheduled to not miss npm security issues
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron:  '0 0 15 * *'
+
+jobs:
+  ci:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Fail on high and critical vulnerabilities in dependencies
+    #
+    # @warning Must run before npm install to defend against post install
+    #     vulnerabilities
+    - name: Audit dependencies
+      run: npx --yes audit-ci@^6 --high --critical
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build for production
+      run: npm run build
+

@@ -1,4 +1,4 @@
-# 📦 webpack Boilerplate
+# 📦 webpack Boilerplate [![Build Status](https://github.com/taniarascia/webpack-boilerplate/actions/workflows/ci.yaml/badge.svg)](https://github.com/taniarascia/webpack-boilerplate/actions)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
