@@ -20,6 +20,10 @@ h1 {
   display: inline-block;
   height: 100px;
   width: 100px;
-  background-image: url('~assets/example.png');
+  background-image: url('@/images/disk.png'); // test resolving of a source image
   background-size: cover;
+}
+
+.disk-image {
+  width: 130px;
 }

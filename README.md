@@ -77,8 +77,8 @@ cd dist && http-server
 
 - [`clean-webpack-plugin`](https://github.com/johnagan/clean-webpack-plugin) - Remove/clean build folders
 - [`copy-webpack-plugin`](https://github.com/webpack-contrib/copy-webpack-plugin) - Copy files to build directory
-- [`html-webpack-plugin`](https://github.com/jantimon/html-webpack-plugin) - Generate HTML files from template
-- [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) - Extract CSS into separate files
+- [`html-bundler-webpack-plugin`](https://github.com/webdiscus/html-bundler-webpack-plugin) - Generate HTML files from any template (EJS, Handlebars, Nunjucks, Pug),\
+  extract JS and CSS into separate files or injects JS and CSS into the DOM.
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets
 
 ### Linters

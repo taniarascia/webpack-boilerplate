@@ -16,6 +16,13 @@ module.exports = merge(common, {
     compress: true,
     hot: true,
     port: 8080,
+    // Live reload after changes
+    watchFiles: {
+      paths: ['src/**/*.*'],
+      options: {
+        usePolling: true,
+      },
+    },
   },
 
   module: {
@@ -24,7 +31,6 @@ module.exports = merge(common, {
       {
         test: /\.(sass|scss|css)$/,
         use: [
-          'style-loader',
           {
             loader: 'css-loader',
             options: { sourceMap: true, importLoaders: 1, modules: false },
