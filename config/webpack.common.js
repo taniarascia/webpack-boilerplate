@@ -1,17 +1,14 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlBundlerPlugin = require('html-bundler-webpack-plugin')
 
 const paths = require('./paths')
 
 module.exports = {
-  // Where webpack looks to start building the bundle
-  entry: [paths.src + '/index.js'],
-
   // Where webpack outputs the assets and bundles
   output: {
     path: paths.build,
-    filename: '[name].bundle.js',
+    assetModuleFilename: 'assets/[name].[hash:8][ext][query]',
     publicPath: '/',
   },
 
@@ -35,12 +32,26 @@ module.exports = {
     }),
 
     // Generates an HTML file from a template
-    // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
-    new HtmlWebpackPlugin({
-      title: 'webpack Boilerplate',
-      favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
-      filename: 'index.html', // output file
+    new HtmlBundlerPlugin({
+      // Start building the bundle from a template
+      entry: [
+        {
+          import: paths.src + '/template.html', // template file
+          filename: 'index.html', // output file
+          data: { title: 'webpack Boilerplate' }, // pass page variables into the template
+        }
+      ],
+      js: {
+        // JS output filename
+        filename: 'js/[name].[contenthash:8].js',
+        //inline: true, // inlines JS into HTML
+      },
+      css: {
+        // CSS output filename
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].chunk.css',
+        //inline: true, // inlines CSS into HTML
+      },
     }),
   ],
 

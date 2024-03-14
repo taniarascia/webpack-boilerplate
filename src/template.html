@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <title><%= htmlWebpackPlugin.options.title %></title>
+     <!-- the variablle is defined in the webpack bundler plugin -->
+    <title><%= title %></title>
+
+    <!-- Test load of a source favicon file -->
+    <link href="@/images/favicon.png" rel="icon" />
+    <!-- Test load of a source SCSS file -->
+    <link href="@/styles/vendor.scss" rel="stylesheet" />
+    <!-- Test load of a source JavaScript file -->
+    <script src="@/index.js" defer="defer"></script>
   </head>
 
   <body>
+    <!-- Test load of a source image file -->
+    <img src="@/images/webpack-logo.svg" class="vendor-logo">
     <div id="root"></div>
   </body>
 </html>
